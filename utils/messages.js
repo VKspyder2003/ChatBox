@@ -1,12 +1,10 @@
 const moment = require('moment');
 
-const time = moment();
-
 function formatMessage(username, text) {
     return {
         username, 
         text,
-        time: time.format('h:mm a')
+        time: moment().utcOffset('+05:30').format('h:mm a')
     }
 }
 
@@ -15,7 +13,7 @@ function systemMessageFormat(systemName, text, username) {
         systemName,
         text,
         username,
-        time: time.format('h:mm a')
+        time: moment().utcOffset('+05:30').format('h:mm a')
     }
 }
 
